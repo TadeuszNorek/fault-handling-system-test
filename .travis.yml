@@ -17,12 +17,13 @@ before_install:
 
 
 stages:
-- build
+- build_and_push
 
 jobs:
     include:
-        - stage: build
+        - stage: build_and_push
           script: 
+            - docker login --username=fhspwr --password=qwerty123@
             - docker build -t fault-handling-system /home/travis/build/TadeuszNorek/fault-handling-system-test/Fault-handling-system/
-            - docker login --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD
-            - docker-compose -f /home/travis/build/TadeuszNorek/fault-handling-system-test/Fault-handling-system/fhs.yml up
+            - docker tag fault-handling-system fhspwr/fault-handling-system-test
+            - docker push fhspwr/fault-handling-system-test       
