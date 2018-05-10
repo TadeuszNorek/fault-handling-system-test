@@ -17,9 +17,12 @@ before_install:
 
 
 stages:
-- build_all
+- build
+- deploy
 
 jobs:
     include:
         - stage: build
-          script: docker build -t fault-handling-system /home/travis/build/TadeuszNorek/fault-handling-system-test/Fault-handling-system/
+          script: 
+            - docker build -t fault-handling-system /home/travis/build/TadeuszNorek/fault-handling-system-test/Fault-handling-system/
+            - docker-compose -f fhs.yml up
