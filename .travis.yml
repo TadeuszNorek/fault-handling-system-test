@@ -19,6 +19,7 @@ before_install:
 stages:
 - build_and_push
 
+
 jobs:
     include:
         - stage: build_and_push
