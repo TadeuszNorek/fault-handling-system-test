@@ -25,4 +25,7 @@ jobs:
         - stage: build
           script: 
             - docker build -t fault-handling-system /home/travis/build/TadeuszNorek/fault-handling-system-test/Fault-handling-system/
-            - docker-compose -f fhs.yml up
+        - stage: deploy
+          script: 
+            - docker login --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD
+            - docker-compose -f /home/travis/build/TadeuszNorek/fault-handling-system-test/Fault-handling-system/fhs.yml up
