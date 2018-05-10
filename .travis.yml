@@ -18,14 +18,11 @@ before_install:
 
 stages:
 - build
-- deploy
 
 jobs:
     include:
         - stage: build
           script: 
             - docker build -t fault-handling-system /home/travis/build/TadeuszNorek/fault-handling-system-test/Fault-handling-system/
-        - stage: deploy
-          script: 
             - docker login --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD
             - docker-compose -f /home/travis/build/TadeuszNorek/fault-handling-system-test/Fault-handling-system/fhs.yml up
