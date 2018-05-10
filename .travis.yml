@@ -22,4 +22,4 @@ stages:
 jobs:
     include:
         - stage: build
-          script: docker build -t fault-handling-system .
+          script: docker build -t fault-handling-system /home/travis/build/TadeuszNorek/fault-handling-system-test/Fault-handling-system/
