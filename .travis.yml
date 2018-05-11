@@ -33,5 +33,5 @@ jobs:
           script:
             - docker login --username=226098@student.pwr.edu.pl --password=1e3ad94a-c454-4a02-9643-ed40130e9924 registry.heroku.com
             - docker pull registry.hub.docker.com/fhspwr/fault-handling-system-test:latest
-            - docker tag registry.hub.docker.com/fhspwr/fault-handling-system-test:latest registry.heroku.com/fault-handling-system
-            - docker push registry.heroku.com/fault-handling-system
+            - docker tag registry.hub.docker.com/fhspwr/fault-handling-system-test:latest registry.heroku.com/fault-handling-system/web
+            - docker push registry.heroku.com/fault-handling-system/web
