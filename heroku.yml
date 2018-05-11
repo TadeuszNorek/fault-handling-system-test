@@ -1,0 +1,4 @@
+build:
+  docker:
+    web: Fault-handling-system/Dockerfile
+    worker: worker/Dockerfile
