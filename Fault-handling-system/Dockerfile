@@ -15,4 +15,4 @@ WORKDIR /Fault-handling-system
 COPY --from=build-env /Fault-handling-system/out .
 ENTRYPOINT ["dotnet", "Fault-handling-system.dll"]
 
-CMD ["dotnet", "Fault-handling-system.dll"]
+CMD ASPNETCORE_URLS=http://*:$PORT Fault-handling-system
