@@ -15,4 +15,3 @@ WORKDIR /Fault-handling-system
 COPY --from=build-env /Fault-handling-system/out .
 ENTRYPOINT ["dotnet", "Fault-handling-system.dll"]
 
-CMD ["docker-compose -f /home/travis/build/TadeuszNorek/fault-handling-system-test/Fault-handling-system/fhs.yml up"]
