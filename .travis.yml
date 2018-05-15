@@ -27,7 +27,7 @@ jobs:
           script: 
             - pwd
             - docker login --username=fhspwr --password=qwerty123@
-            - docker-compose build ./Fault-handling-system/
+            - docker-compose build ./Fault-handling-system/docker-compose.yml
             #- docker build -t fault-handling-system /home/travis/build/TadeuszNorek/fault-handling-system-test/Fault-handling-system/
             #- docker tag fault-handling-system fhspwr/fault-handling-system-test
             #- docker push fhspwr/fault-handling-system-test   
