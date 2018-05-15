@@ -32,8 +32,8 @@ jobs:
             - touch fhs.env
             - docker-compose build 
             #- docker build -t fault-handling-system /home/travis/build/TadeuszNorek/fault-handling-system-test/Fault-handling-system/
-            #- docker tag fault-handling-system fhspwr/fault-handling-system-test
-            #- docker push fhspwr/fault-handling-system-test   
+            - docker tag fault-handling-system fhspwr/fault-handling-system-test
+            - docker push fhspwr/fault-handling-system-test   
         #- stage: deploy
         #  script:
             #- docker login --username=226098@student.pwr.edu.pl --password=1e3ad94a-c454-4a02-9643-ed40130e9924 registry.heroku.com
