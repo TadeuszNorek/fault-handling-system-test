@@ -25,6 +25,7 @@ jobs:
     include:
         - stage: build_and_push
           script: 
+            - pwd
             - docker login --username=fhspwr --password=qwerty123@
             - docker-compose build ./Fault-handling-system/
             #- docker build -t fault-handling-system /home/travis/build/TadeuszNorek/fault-handling-system-test/Fault-handling-system/
