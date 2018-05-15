@@ -28,7 +28,7 @@ jobs:
             - pwd
             - docker login --username=fhspwr --password=qwerty123@
             - cd ./Fault-handling-system/
-            - touch db.end
+            - touch db.env
             - touch fhs.env
             - docker-compose build 
             #- docker build -t fault-handling-system /home/travis/build/TadeuszNorek/fault-handling-system-test/Fault-handling-system/
