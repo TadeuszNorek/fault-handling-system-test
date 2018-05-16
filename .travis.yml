@@ -18,25 +18,17 @@ before_install:
 
 stages:
 - build_and_push
-#- deploy
+
 
 
 jobs:
     include:
         - stage: build_and_push
           script: 
-            - pwd
-            - docker login --username=fhspwr --password=qwerty123@
+            - docker login --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD
             - cd ./Fault-handling-system/
             - touch db.env
             - touch fhs.env
             - docker-compose build 
-            #- docker build -t fault-handling-system /home/travis/build/TadeuszNorek/fault-handling-system-test/Fault-handling-system/
-            - docker tag fault-handling-system fhspwr/fault-handling-system-test
-            - docker push fhspwr/fault-handling-system-test   
-        #- stage: deploy
-        #  script:
-            #- docker login --username=226098@student.pwr.edu.pl --password=1e3ad94a-c454-4a02-9643-ed40130e9924 registry.heroku.com
-            #- docker pull registry.hub.docker.com/fhspwr/fault-handling-system-test:latest
-            #- docker tag registry.hub.docker.com/fhspwr/fault-handling-system-test:latest registry.heroku.com/fault-handling-system/web
-            #- docker push registry.heroku.com/fault-handling-system/web
+            - docker tag fault-handling-system $DOCKER_REPO
+            - docker push $DOCKER_REPO
